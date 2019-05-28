@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request, abort
+from flask import Blueprint, jsonify, request, abort, g
 from pony.orm import db_session
 from marshmallow import ValidationError
 from app import db
@@ -21,6 +21,7 @@ def create():
 
     try:
         data = schema.load(request.get_json())
+        data['user'] = g.current_user
         event = Event(**data)
         db.commit()
     except ValidationError as err:
