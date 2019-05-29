@@ -46,6 +46,7 @@ def show(event_id):
 
 @router.route('/events/<int:event_id>', methods=['PUT'])
 @db_session
+@secure_route
 def update(event_id):
     schema = EventSchema()
     event = Event.get(id=event_id)
@@ -64,6 +65,7 @@ def update(event_id):
 
 @router.route('/events/<int:event_id>', methods=['DELETE'])
 @db_session
+@secure_route
 def delete(event_id):
     event = Event.get(id=event_id)
 
