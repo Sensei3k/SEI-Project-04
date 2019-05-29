@@ -16,7 +16,7 @@ class User(db.Entity):
     def is_password_valid(self, plaintext):
         return bcrypt.checkpw(plaintext.encode('utf8'), self.password_hash.encode('utf8'))
 
-    def generate_taken(self):
+    def generate_token(self):
         payload = {
             'exp': datetime.utcnow() + timedelta(hours=6),
             'iat': datetime.utcnow(),
@@ -46,7 +46,7 @@ class UserSchema(Schema):
 
     @validates_schema
     def check_passwords(self, data):
-        if data['password'] and data['passowrd'] != data['password_confirmation']:
+        if data['password'] and data['password'] != data['password_confirmation']:
             raise ValidationError(
                 field_name='password_confirmation',
                 message=['Does not match']
