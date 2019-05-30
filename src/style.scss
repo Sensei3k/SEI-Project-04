@@ -10,19 +10,20 @@
   border-radius: 12px;
 }
 
-body {
+.hero {
   background-image: url(https://wallpaperstudio10.com/static/wpdb/wallpapers/1000x563/171825.jpg);
   background-size: cover;
-  // color: whitesmoke;
+  color: whitesmoke;
+  
+    .title, .subtitle {
+    color: white;
+    }
 }
 
 .label,  {
-  color: white;
+  // color: white;
 }
 
-.title, .subtitle {
-  color: white;
-}
 
 // .navbar-brand {
 //   opacity: 0.5;
