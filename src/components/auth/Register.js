@@ -25,7 +25,7 @@ class Register extends React.Component {
 
     axios.post('/api/register', this.state.data)
       .then(() => this.props.history.push('/login'))
-      .catch(err => this.setState({ errors: err.response.data.errors }))
+      .catch(err => this.setState({ errors: err.response.data.error }))
   }
 
   render() {
@@ -89,15 +89,11 @@ class Register extends React.Component {
                 <div className="terms">
                   <label className="checkbox">
                     <input type="checkbox" />
-                    Remember me
-                  </label>
-                  <label className="checkbox">
-                    <input type="checkbox" />
                         I agree to the <a href="#">terms and conditions</a>
                   </label>
                 </div>
                 <div>
-                  <button className="button is-primary">REGISTER</button>
+                  <button className="button is-primary is-rounded">REGISTER</button>
                 </div>
               </form>
             </div>
