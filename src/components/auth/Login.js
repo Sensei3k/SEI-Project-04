@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-// import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
 
 import Auth from '../../lib/Auth'
 
@@ -32,13 +32,12 @@ class Login extends React.Component {
         this.props.history.push('/events')
       })
       .catch(() => this.setState({ error: 'Invalid Credentials' }))
-    // toast.success('Welcome back!', { containerId: 'A' })
   }
 
-  // login() {
-  //   // toast.success('Welcome back!', { containerId: 'A' })
-  //   console.log('button clicked')
-  // }
+  login() {
+    toast.success('Welcome back!', { containerId: 'A' })
+    console.log('button clicked')
+  }
 
   render() {
     return (
@@ -79,12 +78,24 @@ class Login extends React.Component {
                   <a>forgotten your password?</a>
                 </div>
                 <button className="button is-primary is-rounded"
-                  onCliick={this.login()}>
+                  onClick={this.login}
+                >
                     Login
                 </button>
               </form>
             </div>
           </div>
+        </div>
+        <div>
+          <ToastContainer
+            enableMultiContainer
+            containerId= "A"
+            position="top-center"
+            hideProgressBar={true}
+            closeOnClick
+            autoClose={2000}
+            toastClassName="profile-toast"
+          />
         </div>
       </section>
     )
@@ -92,17 +103,3 @@ class Login extends React.Component {
 }
 
 export default Login
-
-
-
-{/* <div>
-<ToastContainer
-enableMultiContainer
-containerId= "A"
-position="top-center"
-hideProgressBar={true}
-closeOnClick
-autoClose={2000}
-toastClassName="profile-toast"
-/>
-</div> */}
