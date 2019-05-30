@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import Auth from '../../lib/Auth'
 import Card from './Card'
 
@@ -25,10 +25,28 @@ class EventIndex extends React.Component {
     if(!this.state.events) return null
     return (
       <div>
-        {this.state.events.map(event =>
-          <div key={event.id} className="column is-multiline is-one-quarter-desktop is-one-third-tablet">
-            <Card {...event} />
-          </div>)}
+        <div className="hero is-warning events">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title">
+                Events
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="columns">
+            {this.state.events.map(event =>
+              <div key={event.id} className="column is-multiline is-one-quarter-desktop is-one-third-tablet">
+                <Link to={{
+                  pathname: `/events/${event.id}`
+                }}>
+                  <Card {...event}
+                  />
+                </Link>
+              </div>)}
+          </div>
+        </div>
       </div>
     )
   }

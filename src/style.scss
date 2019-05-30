@@ -1,3 +1,5 @@
+// $hr-color: #B0E2FF;
+
 .terms {
   display: flex;
   flex-direction: column;
@@ -10,21 +12,26 @@
   border-radius: 12px;
 }
 
-.hero {
-  background-image: url(https://wallpaperstudio10.com/static/wpdb/wallpapers/1000x563/171825.jpg);
-  background-size: cover;
-  color: whitesmoke;
-  
+.is-fullheight-with-navbar {
+    background-image: url(https://wallpaperstudio10.com/static/wpdb/wallpapers/1000x563/171825.jpg);
+    background-size: cover;
+    color: whitesmoke;
+
     .title, .subtitle {
-    color: white;
+      color: white;
     }
 }
 
-.label,  {
-  // color: white;
+.events {
+    text-align: center;
 }
 
-
-// .navbar-brand {
-//   opacity: 0.5;
-// }
+a.navbar-item {
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Poiret One', cursive;
+  &:hover.navbar-item {
+    color: #77DCFF;
+  }
+}
