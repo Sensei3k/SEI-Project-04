@@ -1,9 +1,8 @@
 import React from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 // import Auth from '../../lib/Auth'
 import Card from './Card'
-
 
 class EventIndex extends React.Component {
 
@@ -16,14 +15,14 @@ class EventIndex extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/events')
-      .then(res => this.setState({ events: res.data}))
+    axios.get('/api/events').then(res => this.setState({events: res.data}))
     console.log(this.state.events, 'events')
   }
 
   render() {
-    if(!this.state.events) return null
-    return (
+    if (!this.state.events)
+      return null
+    return (<section>
       <div>
         <div className="hero is-warning events">
           <div className="hero-body">
@@ -34,21 +33,23 @@ class EventIndex extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container">
-          <div className="columns">
-            {this.state.events.map(event =>
-              <div key={event.id} className="column is-multiline is-one-quarter-desktop is-one-third-tablet">
-                <Link to={{
-                  pathname: `/events/${event.id}`
-                }}>
-                  <Card {...event}
-                  />
-                </Link>
-              </div>)}
+        <section className="section">
+          <div className="container">
+            <div className="columns">
+              {
+                this.state.events.map(event => <div key={event.id} className="column is-multiline is-one-quarter-desktop is-one-third-tablet">
+                  <Link to={{
+                    pathname: `/events/${event.id}`
+                  }}>
+                    <Card {...event}/>
+                  </Link>
+                </div>)
+              }
+            </div>
           </div>
-        </div>
+        </section>
       </div>
-    )
+    </section>)
   }
 }
 

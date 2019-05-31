@@ -33,16 +33,12 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar">
         <div className="container">
-
           <div className="navbar-brand">
             {/* Branding and burger menu */}
             <Link to="/" className="navbar-item display is-size-4"><i className="fas fa-futbol"></i></Link>
 
-            <a
-              role="button"
-              className={`navbar-burger${this.state.active ? ' is-active' : ''}`}
-              onClick={this.toggleActive}
-            >
+            <a role="button" className={`navbar-burger${this.state.active ? ' is-active' : ''}`}
+              onClick={this.toggleActive}>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
@@ -54,12 +50,13 @@ class Navbar extends React.Component {
 
             <div className="navbar-start">
               {/* Left-hand links */}
-              <Link to="/events" className="navbar-item">Events</Link>
-              <Link to="/contact" className="navbar-item">Contact</Link>
+              {Auth.isAuthenticated() && <Link to="/events" className="navbar-item">Events</Link>}
+              {/* {Auth.isAuthenticated() && <Link to="/" className="navbar-item">Teams</Link>} */}
             </div>
 
             <div className="navbar-end">
               {/* Right-hand links */}
+              {Auth.isAuthenticated() &&<Link to="/contact" className="navbar-item">Contact</Link>}
               {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Sign Up</Link>}
               {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
               {Auth.isAuthenticated() && <a className="navbar-item" onClick={this.logout}>Logout</a>}
