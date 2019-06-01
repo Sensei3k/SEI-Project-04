@@ -20,9 +20,9 @@ class Show extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state, 'state')
     if(!this.state.events) return null
-    const { name, image, description } = this.state.events
+    const { name, image, comments } = this.state.events
 
     return (
       <section>
@@ -55,7 +55,7 @@ class Show extends React.Component {
                   <hr />
                 </div>
                 <div className="column is-one-half">
-                  <h2 className="title is-6">Description: </h2>
+                  <h2 className="title is-6">Description: {comments}</h2>
                   <hr />
                 </div>
 
@@ -63,8 +63,6 @@ class Show extends React.Component {
                   <h2 className="title is-6">Created & Hosted By:</h2>
                   <hr />
                 </div>
-
-
               </div>
             </div>
           </div>
