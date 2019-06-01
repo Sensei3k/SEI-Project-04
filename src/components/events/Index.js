@@ -2,7 +2,9 @@ import React from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 // import Auth from '../../lib/Auth'
+
 import Card from './Card'
+import Footer from '../common/Footer'
 
 class EventIndex extends React.Component {
 
@@ -49,6 +51,7 @@ class EventIndex extends React.Component {
           </div>
         </section>
       </div>
+      <Footer />
     </section>)
   }
 }

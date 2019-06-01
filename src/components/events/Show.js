@@ -27,29 +27,64 @@ class Show extends React.Component {
     return (
       <section>
         <div>
-          <div>
-            <div className="hero is-warning events">
-              <div className="hero-body">
-                <div className="container">
-                  <h1 className="title">
-                    {name}
-                  </h1>
-                </div>
+          <div className="hero is-warning events">
+            <div className="hero-body">
+              <div className="container">
+                <h1 className="title">
+                  {name}
+                </h1>
               </div>
             </div>
           </div>
-          <section className="section">
-            <div className="container">
-              <div>
-                <img src={image} />
-                <p>{description}</p>
+        </div>
+        <section className="section show">
+          <div className="container">
+            <div className="columns is-multiline">
+              <div className="column is-half-desktop is-full-tablet">
+                <figure className="image">
+                  <img src={image} alt={name} />
+                </figure>
+              </div>
+              <div className="column is-half-desktop is-full-tablet">
+                <div className="column is-half-desktop is-full-tablet">
+                  <h2 className="title is-6">Schedule: {name}</h2>
+                  <hr />
+                </div>
+                <div className="column is-half-desktop is-full-tablet">
+                  <h2 className="title is-6">Venue: Riverplate Park, Sani Abacha Way, Abuja, Nigeria</h2>
+                  <hr />
+                </div>
+                <div className="column is-one-half">
+                  <h2 className="title is-6">Description: </h2>
+                  <hr />
+                </div>
+
+                <div className="column is-one-half">
+                  <h2 className="title is-6">Created & Hosted By:</h2>
+                  <hr />
+                </div>
+
+
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </section>
     )
   }
 }
 
 export default Show
+
+{/* <CabinMap data={state} /> */}
+
+// {this.canModify() &&
+//   <div className="level-right">
+//     <{'/cabins/$/edit'} className="button is-primary">Edit</Link>
+//     <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+//   </div>
+// }
+//
+// {!this.canModify() && <div>
+//   <button onClick={this.startConversation}>Check Availability</button>
+// </div>}
