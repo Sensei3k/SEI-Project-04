@@ -11,6 +11,7 @@ with db_session():
     schema = UserSchema()
     sensei = User(
         username='sensei',
+        image='https://www.zikoko.com/wp-content/uploads/cloudinary/v1494504648/C_NB7jQXgAAesJ2_ibvftl.jpg',
         email='ade@gmail.com',
         password_hash=schema.generate_hash('pass')
     )

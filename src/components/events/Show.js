@@ -74,6 +74,7 @@ class Show extends React.Component {
 
 export default Show
 
+{/* <img src={user.image}/> */}
 {/* <CabinMap data={state} /> */}
 
 // {this.canModify() &&
