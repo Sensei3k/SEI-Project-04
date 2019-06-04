@@ -26,7 +26,7 @@ class EventIndex extends React.Component {
       return null
     return (<section>
       <div>
-        <div className="hero is-warning events">
+        <div className="hero is-green events">
           <div className="hero-body">
             <div className="container">
               <h1 className="title">

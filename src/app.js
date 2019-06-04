@@ -12,6 +12,9 @@ import Login from './components/auth/Login'
 
 import EventIndex from './components/events/Index'
 import EventShow from './components/events/Show'
+import EventNew from './components/events/New'
+
+import UserShow from './components/user/Show'
 
 import 'bulma'
 import './style.scss'
@@ -23,6 +26,9 @@ class App extends React.Component {
       <main>
         <Navbar/>
         <Switch>
+          <Route path='/profile' component={UserShow} />
+
+          <Route path='/events/:id/edit' component={EventNew}/>
           <Route path='/events/:id' component={EventShow}/>
           <Route path='/events' component={EventIndex}/>
 

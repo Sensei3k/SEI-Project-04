@@ -76,3 +76,17 @@ def delete(event_id):
     db.commit()
 
     return '', 204
+
+
+# =========================
+
+@router.route('/events/<int:event_id>/attend', methods=['POST'])
+@db_session
+@secure_route
+def attend(event_id):
+    schema = EventSchema()
+    event = Event.get(id=event_id)
+    event.attended_by.add(g.current_user.id)
+    db.commit()
+
+    return schema.dumps(event)

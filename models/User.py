@@ -13,6 +13,7 @@ class User(db.Entity):
     image = Required(str)
     password_hash = Required(str)
     events = Set('Event')
+    attending_events = Set('Event', reverse='attended_by')
 
     def is_password_valid(self, plaintext):
         return bcrypt.checkpw(plaintext.encode('utf8'), self.password_hash.encode('utf8'))
@@ -40,7 +41,8 @@ class UserSchema(Schema):
     image = fields.Str(required=True)
     password = fields.Str(load_only=True)
     password_confirmation = fields.Str(load_only=True)
-    events = fields.Nested('EventsSchema', many=True, exclude=('user',))
+    events = fields.Nested('EventSchema', many=True, exclude=('user',))
+    attending_events = fields.Nested('EventSchema', many=True, exclude=('user',))
 
     def generate_hash(self, plaintext):
         return bcrypt.hashpw(plaintext.encode('utf8'), bcrypt.gensalt(8)).decode('utf8')

@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 // import Auth from '../../lib/Auth'
 
+import Footer from '../common/Footer'
 
 class Show extends React.Component {
 
@@ -22,12 +23,12 @@ class Show extends React.Component {
   render() {
     console.log(this.state, 'state')
     if(!this.state.events) return null
-    const { name, image, comments } = this.state.events
+    const { name, image, user } = this.state.events
 
     return (
       <section>
         <div>
-          <div className="hero is-warning events">
+          <div className="hero is-green events">
             <div className="hero-body">
               <div className="container">
                 <h1 className="title">
@@ -47,26 +48,23 @@ class Show extends React.Component {
               </div>
               <div className="column is-half-desktop is-full-tablet">
                 <div className="column is-half-desktop is-full-tablet">
-                  <h2 className="title is-6">Schedule: {name}</h2>
+                  <h2 className="title is-6">Park Name: {name}</h2>
                   <hr />
                 </div>
                 <div className="column is-half-desktop is-full-tablet">
                   <h2 className="title is-6">Venue: Riverplate Park, Sani Abacha Way, Abuja, Nigeria</h2>
                   <hr />
                 </div>
-                <div className="column is-one-half">
-                  <h2 className="title is-6">Description: {comments}</h2>
-                  <hr />
-                </div>
 
                 <div className="column is-one-half">
-                  <h2 className="title is-6">Created & Hosted By:</h2>
+                  <h2 className="title is-6">Created By: {user.username}</h2>
                   <hr />
                 </div>
               </div>
             </div>
           </div>
         </section>
+        <Footer />
       </section>
     )
   }

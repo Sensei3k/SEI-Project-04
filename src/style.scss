@@ -1,4 +1,5 @@
 // $hr-color: #B0E2FF;
+$ng-color: #008753;
 
 .terms {
   display: flex;
@@ -16,6 +17,13 @@
   }
 }
 
+.is-green {
+  background-color: $ng-color;
+}
+
+.footer {
+  background-color: $ng-color;
+}
 .main {
   margin: 0;
   padding: 28px;

@@ -1,8 +1,9 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, g
 from models.User import User, UserSchema
 from app import db
 from pony.orm import db_session
 from marshmallow import ValidationError
+from lib.secure_route import secure_route
 
 router = Blueprint('auth', __name__)
 
@@ -33,6 +34,8 @@ def login():
 
     user = User.get(email=data.get('email'))
 
+    print(data, user)
+
     if not user or not user.is_password_valid(data.get('password')):
         return jsonify({'message': 'Unauthorized'}), 401
 
@@ -40,3 +43,12 @@ def login():
         'message': f'Welcome back {user.username}',
         'token': user.generate_token()
     })
+
+@router.route('/profile', methods=['GET'])
+@db_session # Allow access to the database for the 'index' function
+@secure_route
+def user_index():
+    # This will serialize our data
+    schema = UserSchema() #many=True
+    user = User.get(id=g.current_user.id)
+    return schema.dumps(user) # 'schema.dumps' converts the list to JSON
