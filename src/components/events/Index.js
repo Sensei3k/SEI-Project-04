@@ -3,8 +3,10 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 // import Auth from '../../lib/Auth'
 
+
 import Card from './Card'
 import Footer from '../common/Footer'
+import MapIndex from '../map/Index'
 
 class EventIndex extends React.Component {
 
@@ -22,6 +24,7 @@ class EventIndex extends React.Component {
   }
 
   render() {
+    console.log(this.state, 'state')
     if (!this.state.events)
       return null
     return (<section>
@@ -48,6 +51,7 @@ class EventIndex extends React.Component {
                 </div>)
               }
             </div>
+            <MapIndex events={this.state.events} />
           </div>
         </section>
       </div>

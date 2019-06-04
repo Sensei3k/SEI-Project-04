@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
+import Contact from './components/common/Contact'
 
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
@@ -32,6 +33,7 @@ class App extends React.Component {
           <Route path='/events/:id' component={EventShow}/>
           <Route path='/events' component={EventIndex}/>
 
+          <Route path='/contact' component={Contact}/>
           <Route path='/register' component={Register}/>
           <Route path='/login' component={Login}/>
           <Route exact path='/' component={Home}/>

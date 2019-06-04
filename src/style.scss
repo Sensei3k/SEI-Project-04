@@ -17,6 +17,14 @@ $ng-color: #008753;
   }
 }
 
+.marker{
+  width: 30px;
+}
+
+.popupimage{
+  width: 200px;
+}
+
 .is-green {
   background-color: $ng-color;
 }
@@ -46,6 +54,10 @@ a.navbar-item {
   &:hover.navbar-item {
     color: #77DCFF;
   }
+}
+
+.marker {
+  width: 30px;
 }
 //
 //  body {

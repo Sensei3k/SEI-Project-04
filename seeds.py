@@ -27,7 +27,9 @@ with db_session():
         image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
         venue='38 IBM Haruna St, Utako, Abuja, Nigeria',
         user=sensei,
-        format=five_a_side
+        format=five_a_side,
+        latitude=9.062720,
+        longitude=7.439199
     )
 
     Event(
@@ -35,7 +37,9 @@ with db_session():
         image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
         venue='Citybridge Sportsplex, Abuja Nigeria',
         user=sensei,
-        format=seven_a_side
+        format=seven_a_side,
+        latitude=9.077825,
+        longitude=7.476195
     )
 
     Event(
@@ -43,7 +47,9 @@ with db_session():
         image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
         venue='Citybridge Sportsplex, Abuja Nigeria',
         user=sensei,
-        format=five_a_side
+        format=five_a_side,
+        latitude=9.065048,
+        longitude=7.489682
     )
 
     db.commit() # Writes the SQL and runs it against the db

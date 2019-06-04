@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 
 const Card = ({name, image}) => {
   return (<div className="card">
@@ -12,7 +11,7 @@ const Card = ({name, image}) => {
       <div className="media">
         <div className="media-content">
           <p className="title is-4">{name}</p>
-          <p className="subtitle is-6">Venues:</p>
+          <p className="subtitle is-6">Venue:</p>
         </div>
       </div>
     </div>

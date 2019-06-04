@@ -12,6 +12,8 @@ class Event(db.Entity):
     venue = Required(str)
     user = Required('User')
     format = Required('Format')
+    latitude = Required(float)
+    longitude = Required(float)
     attended_by = Set('User', reverse='attending_events') # M:M
 
 class EventSchema(Schema):
@@ -21,6 +23,8 @@ class EventSchema(Schema):
     venue = fields.Str(required=True)
     format = fields.Nested('FormatSchema', dump_only=True)
     format_id = fields.Int(load_only=True)
+    latitude = fields.Float()
+    longitude = fields.Float()
     user = fields.Nested('UserSchema', exclude=('email', 'events'))
 
 
