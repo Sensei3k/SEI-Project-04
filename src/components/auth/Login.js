@@ -44,7 +44,7 @@ class Login extends React.Component {
       <section className="section main">
         <div className="container">
           <div className="columns is-centered">
-            <div className="column is-half-desktop is-two-thirds-tablet">
+            <div className="column is-half-desktop is-two-thirds-tablet" id="login-form">
               <form onSubmit={this.handleSubmit}>
                 <div className="field">
                   <label className="label">Email</label>

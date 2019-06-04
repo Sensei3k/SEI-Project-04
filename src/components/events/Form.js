@@ -4,12 +4,12 @@ const Form = ({ handleChange, handleSubmit, events }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="field">
-        <label className="label">Event Location</label>
+        <label className="label">Event Name</label>
         <div className="control">
           <input
             className="input"
             name="name"
-            placeholder="eg: "
+            placeholder="eg: Astro Turf "
             onChange={handleChange}
             value={ events.name || ''}
           />
@@ -17,19 +17,19 @@ const Form = ({ handleChange, handleSubmit, events }) => {
       </div>
 
       <div className="field">
-        <label className="label">Descrition</label>
+        <label className="label">Venue</label>
         <div className="control">
           <input
             className="input"
             name="image"
-            placeholder="eg: https://gameofthrones.fandom.com/jon-snow.png"
+            placeholder="eg: Ahmed Musa Crescent, Abuja, Nigeria"
             onChange={handleChange}
-            value={events.description || ''}
+            value={events.venue || ''}
           />
         </div>
 
       </div>
-      <button className="button is-primary">Submit</button>
+      <button className="button is-green submit">Submit</button>
     </form>
   )
 }

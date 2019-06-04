@@ -37,12 +37,12 @@ class Show extends React.Component {
     console.log(this.state, 'state')
     if (!this.state.events)
       return null
-    const {name, image, user, id} = this.state.events
+    const {name, image, user, id, venue} = this.state.events
 
     return (<section>
       <div>
         <div className="hero is-green events">
-          <div className="hero-body">
+          <div className="hero-body show">
             <div className="container">
               <h1 className="title">
                 {name}
@@ -77,7 +77,7 @@ class Show extends React.Component {
                   <hr/>
                 </div>
                 <div className="column is-half-desktop is-full-tablet">
-                  <h2 className="title is-6">Venue: Riverplate Park, Sani Abacha Way, Abuja, Nigeria</h2>
+                  <h2 className="title is-6">Venue: {venue}</h2>
                   <hr/>
                 </div>
 

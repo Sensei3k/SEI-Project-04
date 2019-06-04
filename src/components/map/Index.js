@@ -29,8 +29,9 @@ class MapIndex extends React.Component {
       <div>
         <Map
           style='mapbox://styles/mapbox/streets-v8'
-          center={[7.3986, 9.0765]}
-          zoom={[11]}
+          center={[8.6753, 9.0820]}
+          // center={[7.3986, 9.0765]}
+          zoom={[5.53]}
           containerStyle={{
             height: '80vh',
             width: '80vw'

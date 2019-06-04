@@ -40,7 +40,7 @@ class Show extends React.Component {
 
   render() {
     console.log(this.state.user, 'user')
-    // console.log(this.state.user.id, 'id')
+    // console.log(this.state.user.isd, 'id')
     if(!this.state.user) return null
     return (
       <h1>{this.state.user.username}</h1>

@@ -8,13 +8,20 @@ $ng-color: #008753;
 }
 
 .is-fullheight-with-navbar {
-  background-image: url(https://wallpaperstudio10.com/static/wpdb/wallpapers/1000x563/171825.jpg);
+  // background-image: url(https://wallpaperstudio10.com/static/wpdb/wallpapers/1000x563/171825.jpg);
   background-size: cover;
   color: whitesmoke;
 
   .title, .subtitle {
     color: white;
   }
+}
+
+#background-change {
+  background-position: center;
+  background-size: cover;
+  background-image: contain;
+  transition: background-image 2s ease;
 }
 
 .marker{
@@ -29,9 +36,14 @@ $ng-color: #008753;
   background-color: $ng-color;
 }
 
+ .submit {
+   color: white;
+ }
+
 .footer {
   background-color: $ng-color;
 }
+
 .main {
   margin: 0;
   padding: 28px;
@@ -46,47 +58,53 @@ $ng-color: #008753;
   text-align: center;
 }
 
+.navbar {
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  top: 0;
+  left: 0;
+}
+
 a.navbar-item {
+  color: whitesmoke;
   padding-top: 10px;
   font-weight: bold;
-  font-size: 18px;
-  font-family: 'Poiret One', cursive;
+  font-size: 22px;
+  font-family: 'Baloo Chettan', cursive;
+  // transition: all .3s ease;
+  transition: color .3s ease, opacity .3s ease;
+  cursor: pointer;
   &:hover.navbar-item {
     color: #77DCFF;
+    background: transparent;
+    border-bottom: 4px solid whitesmoke;
   }
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social>* {
+  margin: 10px;
+  // flex: 1 1 160px;
 }
 
 .marker {
   width: 30px;
 }
-//
-//  body {
-//    min-height: 100vh;
-//  }
-//
-//  .footer {
-//   background-color: #363636;
-//   height: 50px;
-//   margin-top: auto; // ---> new Feature
-// }
-//
-// section {
-//   display: flex;
-//   flex-direction: column;
-//   flex: 1;
-//   width: 100%;
-//   height: 100%;
-// }
-//
-//
-// .home-container {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center; // ---- new Feature
-//
-//   .title-container {
-//     // background-color: rgba(0, 0, 0, 0.3); ----> new Feature
-//     max-width: 600px;
-//     border-radius: 10px;
-//   }
-// }
+
+#login-form {
+  width: 50vw;
+}
+
+#contact-page {
+  margin: auto;
+}
+
+.hero-body.show {
+  margin-top: 52px;
+  border-top: 10px solid white;
+}
