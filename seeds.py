@@ -24,7 +24,7 @@ with db_session():
 
     Event(
         name='Planet Futsal',
-        image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
+        image='https://i.imgur.com/jWd3gQb.jpg',
         venue='38 IBM Haruna St, Utako, Abuja',
         user=sensei,
         format=five_a_side,
@@ -44,7 +44,7 @@ with db_session():
 
     Event(
         name='Turf Arena',
-        image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
+        image='https://i.imgur.com/IU3Fdbh.jpg',
         venue='Citybridge Sportsplex, Abuja',
         user=sensei,
         format=five_a_side,
@@ -64,7 +64,7 @@ with db_session():
 
     Event(
         name='Sports Center',
-        image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
+        image='https://i.imgur.com/87xxyZT.jpg',
         venue='Covenant University,Km 10, Idiroko Road,Ota, Ogun',
         user=sensei,
         format=five_a_side,
@@ -74,7 +74,7 @@ with db_session():
 
     Event(
         name='Landmark Village',
-        image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
+        image='https://i.imgur.com/jZmtumM.jpg',
         venue=' Landmark Village 4 Water Corporation Drive ,Victoria Island, Lagos',
         user=sensei,
         format=five_a_side,
@@ -84,7 +84,7 @@ with db_session():
 
     Event(
         name='Childrens International School',
-        image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
+        image='https://i.imgur.com/WAaZuAr.jpg',
         venue='Plot 8 Funke Zainab Usman Street, Lekki Phase 1, Lagos.',
         user=sensei,
         format=five_a_side,
@@ -94,7 +94,7 @@ with db_session():
 
     Event(
         name='Campos Memorial Mini Stadium',
-        image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
+        image='https://i.imgur.com/rwoWizC.jpg',
         venue='Campos Memorial Mini Stadium, 15, Igbosere road, Lagos Island',
         user=sensei,
         format=five_a_side,
@@ -104,7 +104,7 @@ with db_session():
 
     Event(
         name='Fun Turf',
-        image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
+        image='https://i.imgur.com/FRVrcjd.jpg',
         venue='Block 10, Plot 4, Admiralty way,Lekki Phase 1, Lagos.',
         user=sensei,
         format=five_a_side,
@@ -114,12 +114,22 @@ with db_session():
 
     Event(
         name='Chrisland School, Ikeja',
-        image='http://mydonate.bt.com/images/events/B263704_1521542545510.jpg',
+        image='https://i.imgur.com/w9u1frP.jpg',
         venue='26, Opebi Road, P.M.B. 21614,Ikeja, Lagos',
         user=sensei,
         format=five_a_side,
         latitude=6.593582,
         longitude=3.357608
+    )
+
+    Event(
+        name='American International School of Lagos',
+        image='https://i.imgur.com/np6w4Ua.jpg',
+        venue='Federal Estates, Victoria Island,Lagos',
+        user=sensei,
+        format=seven_a_side,
+        latitude=6.437816,
+        longitude=3.434573
     )
 
     db.commit() # Writes the SQL and runs it against the db

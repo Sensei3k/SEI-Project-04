@@ -14,8 +14,8 @@ class EventIndex extends React.Component {
 
     this.state = {
       events: null,
-      MapView: true,
-      ListView: false
+      MapView: false,
+      ListView: true
     }
 
     this.MapView = this.MapView.bind(this)
@@ -81,3 +81,6 @@ class EventIndex extends React.Component {
 }
 
 export default EventIndex
+
+
+// MApview = true - false
