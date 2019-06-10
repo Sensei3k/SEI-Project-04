@@ -1,7 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
+
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
+
 const EnvPlugin = process.env.NODE_ENV === 'production' ?  (
   new webpack.EnvironmentPlugin({ ...process.env })
 ) : (
@@ -19,7 +22,25 @@ module.exports = {
     rules: [
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.css$/, loader: ['style-loader', 'css-loader'] },
-      { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] }
+      { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: './assets/[name].[ext]'
+          }
+        }
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: './fonts/[name].[ext]'
+          }
+        }
+      }
     ]
   },
   devServer: {
@@ -39,6 +60,9 @@ module.exports = {
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'src/assets', to: 'assets'}
+    ])
   ]
 }

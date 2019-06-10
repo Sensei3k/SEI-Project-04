@@ -35,6 +35,8 @@ class EventIndex extends React.Component {
     this.setState({MapView: true, ListView: false})
   }
 
+
+
   render() {
     console.log(this.state, 'state')
     if (!this.state.events)
@@ -54,6 +56,7 @@ class EventIndex extends React.Component {
           <div className="container">
             {Auth.isAuthenticated() && <Link to="/events/new" className="button is-primary">Add Event</Link>}
             <br/>
+            {/* <a className="weatherwidget-io" href="https://forecast7.com/en/6d523d38/lagos/" data-label_1="LAGOS" data-label_2="WEATHER" data-theme="original" >LAGOS WEATHER</a> */}
             <div className="level-right">
               <button className="button is-green fas fa-map-marker-alt" onClick={this.MapView}>Map</button>
               <button className="button is-green fas fa-list" onClick={this.ListView}>Grid</button>

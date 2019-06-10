@@ -18,8 +18,8 @@ with db_session():
     )
 
 
-    five_a_side = Format(name='5 a side')
-    seven_a_side = Format(name='7 a side')
+    five_a_side = Format(name='5-a-side')
+    seven_a_side = Format(name='7-a-side')
 
 
     Event(

@@ -20,7 +20,13 @@ const Contact = () => {
                 </div>
               </div>
               <div className="content is-multiline">
+                <p className="subtitle is-5">
                 Adetola Oyawoye is a Junior Software Engineer, currently based in London, Uk.
+                </p>
+                <br />
+                <p className="subtitle is-5">
+                Please contact me on any medium below, for all enquiries.
+                </p>
                 <br />
                 <div className="social">
                   <a href="http://www.twitter.com/Detola3000" target="_blank" rel="noopener noreferrer">

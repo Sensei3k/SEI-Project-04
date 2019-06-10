@@ -17,6 +17,10 @@ $ng-color: #008753;
   }
 }
 
+// .is-active {
+//   color: $ng-color;
+// }
+
 #background-change {
   background-position: center;
   background-size: cover;
@@ -78,7 +82,8 @@ a.navbar-item {
   transition: color .3s ease, opacity .3s ease;
   cursor: pointer;
   &:hover.navbar-item {
-    color: #77DCFF;
+    // color: #77DCFF;
+    color: $ng-color;
     background: transparent;
     border-bottom: 4px solid whitesmoke;
   }

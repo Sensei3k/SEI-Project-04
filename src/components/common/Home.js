@@ -31,7 +31,7 @@ class Home extends React.Component {
               <div className="container">
                 {/* <h1 className="title display">Juego Bonito</h1> */}
                 <h1 className="title display">Baàtà Wúrà</h1>
-                <h2 className="subtitle">The Beautiful Game</h2>
+                <h2 className="subtitle">The beautiful game wey we love</h2>
               </div>
             </div>
           </section>

@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 import bcrypt
 import jwt
-from pony.orm import Required, Set
+from pony.orm import Required, Set, Optional
 from marshmallow import Schema, fields, post_load, validates_schema, ValidationError
 from app import db
 from config.environment import secret
@@ -10,7 +10,7 @@ from config.environment import secret
 class User(db.Entity):
     username = Required(str, unique=True)
     email = Required(str, unique=True)
-    image = Required(str)
+    image = Optional(str)
     password_hash = Required(str)
     events = Set('Event')
     attending_events = Set('Event', reverse='attended_by')
@@ -38,7 +38,7 @@ class UserSchema(Schema):
     id = fields.Int(dump_only=True)
     username = fields.Str(required=True)
     email = fields.Str(required=True)
-    image = fields.Str(required=True)
+    image = fields.Str()
     password = fields.Str(load_only=True)
     password_confirmation = fields.Str(load_only=True)
     events = fields.Nested('EventSchema', many=True, exclude=('user',))

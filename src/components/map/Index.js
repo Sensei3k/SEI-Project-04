@@ -15,7 +15,6 @@ class MapIndex extends React.Component {
       pin: {},
       pinClick: false
     }
-
   }
 
   handleMarkerClick(event) {
@@ -68,7 +67,6 @@ class MapIndex extends React.Component {
     )
   }
 }
-
 
 
 export default MapIndex
