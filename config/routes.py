@@ -1,5 +1,5 @@
 import os
-from flask import abort
+# from flask import abort
 from app import app
 from controllers import events, auth
 
@@ -13,4 +13,4 @@ def catch_all(path='index.html'): # when there is no path then set path to be in
     if os.path.isfile('public/' + path):
         return app.send_static_file(path)
 
-    return abort(404)
+    return app.send_static_file('index.html') # otherwise send back index.html file
