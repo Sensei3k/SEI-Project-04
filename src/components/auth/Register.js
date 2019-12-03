@@ -16,10 +16,13 @@ class Register extends React.Component {
   }
 
   handleChange(e) {
+    // merge data on state with new data from form
     const data = { ...this.state.data, [e.target.name]: e.target.value }
-    this.setState({ data })
+    //  set thr data on state
+    this.setState({ data }) // ES6 Shorthand ==> ({ data: data })
   }
 
+  // send data to API
   handleSubmit(e) {
     e.preventDefault()
 
@@ -34,7 +37,7 @@ class Register extends React.Component {
       <section className="section">
         <div className="container">
           <div className="columns is-centered">
-            <div className="column is-half-desktop is-two-thirds-tablet">
+            <div className="column is-half-desktop is-two-thirds-tablet register">
               <form onSubmit={this.handleSubmit}>
                 <div className="field">
                   <label className="label">Username</label>
@@ -42,7 +45,7 @@ class Register extends React.Component {
                     <input
                       className="input"
                       name="username"
-                      placeholder="eg: leela3000"
+                      placeholder="eg: John Appleseed"
                       onChange={this.handleChange}
                     />
                   </div>

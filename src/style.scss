@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=ABeeZee&display=swap');
+
 // $hr-color: #B0E2FF;
 $ng-color: #008753;
+
+body {
+    font-family: 'ABeeZee', sans-serif;
+}
 
 .terms {
   display: flex;
@@ -8,7 +14,6 @@ $ng-color: #008753;
 }
 
 .is-fullheight-with-navbar {
-  // background-image: url(https://wallpaperstudio10.com/static/wpdb/wallpapers/1000x563/171825.jpg);
   background-size: cover;
   color: whitesmoke;
 
@@ -16,10 +21,9 @@ $ng-color: #008753;
     color: white;
   }
 }
-
-// .is-active {
-//   color: $ng-color;
-// }
+  .label, .input {
+    font-size: 20px;
+  }
 
 #background-change {
   background-position: center;
@@ -48,6 +52,12 @@ $ng-color: #008753;
 
 .footer {
   background-color: $ng-color;
+  display: block;
+  p {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
 }
 
 .main {
@@ -105,6 +115,7 @@ a.navbar-item {
 
 #login-form {
   width: 50vw;
+  padding-top: 100px;
 }
 
 #contact-page {
@@ -123,6 +134,14 @@ a.navbar-item {
 .contact>.card {
   max-height: 10px;
 }
+
+.register {
+  padding-top: 100px;
+}
+
+// .title, .display { 
+//   color: #FFD700;
+// }
 
 // .card-contact {
 //   height: 350px;

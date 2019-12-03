@@ -15,7 +15,7 @@ class Login extends React.Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.login = this.login.bind(this)
+    // this.login = this.login.bind(this)
   }
 
   handleChange(e) {
@@ -32,56 +32,61 @@ class Login extends React.Component {
         this.props.history.push('/events')
       })
       .catch(() => this.setState({ error: 'Invalid Credentials' }))
+    toast.success('Welcome Back', { containerId: 'A' })
   }
 
   login() {
-    toast.success('Welcome back!', { containerId: 'A' })
+    toast.success('Welcome back!', {
+      containerId: 'A',
+      position: toast.POSITION.TOP_RIGHT
+    })
     console.log('button clicked')
   }
 
   render() {
     return (
-      <section className="section main">
-        <div className="container">
-          <div className="columns is-centered">
-            <div className="column is-half-desktop is-two-thirds-tablet" id="login-form">
+      <section className='section main'>
+        <div className='container'>
+          <div className='columns is-centered'>
+            <div
+              className='column is-half-desktop is-two-thirds-tablet register'
+              id='login-form'
+            >
               <form onSubmit={this.handleSubmit}>
-                <div className="field">
-                  <label className="label">Email</label>
-                  <div className="control">
+                <div className='field'>
+                  <label className='label'>Email</label>
+                  <div className='control'>
                     <input
-                      className="input"
-                      name="email"
-                      placeholder="eg: johnsnow@nightswatch.com"
+                      className='input'
+                      name='email'
+                      placeholder='eg: johnsnow@nightswatch.com'
                       onChange={this.handleChange}
                     />
                   </div>
                 </div>
-                <div className="field">
-                  <label className="label">Password</label>
-                  <div className="control">
+                <div className='field'>
+                  <label className='label'>Password</label>
+                  <div className='control'>
                     <input
-                      className="input"
-                      name="password"
-                      type="password"
-                      placeholder="eg: ••••••••"
+                      className='input'
+                      name='password'
+                      type='password'
+                      placeholder='eg: KingOftheNorth1'
                       onChange={this.handleChange}
                     />
                   </div>
-                  {this.state.error && <div className="help is-danger">{this.state.error}</div>}
+                  {this.state.error && (
+                    <div className='help is-danger'>{this.state.error}</div>
+                  )}
                 </div>
-                <div className="terms">
-                  <label className="checkbox">
-                    <input type="checkbox" />
-                    Remember me
+                <div className='terms'>
+                  <label className='checkbox'>
+                    <input type='checkbox' /> Remember me
                   </label>
-                  <a>forgotten your password?</a>
+                  <br />
+                  <a> forgotten your password?</a>
                 </div>
-                <button className="button is-primary is-rounded"
-                  onClick={this.login}
-                >
-                    Login
-                </button>
+                <button className='button is-primary is-rounded'>Login</button>
               </form>
             </div>
           </div>
@@ -89,12 +94,12 @@ class Login extends React.Component {
         <div>
           <ToastContainer
             enableMultiContainer
-            containerId= "A"
-            position="top-center"
+            containerId='A'
+            position='top-center'
             hideProgressBar={true}
             closeOnClick
             autoClose={2000}
-            toastClassName="profile-toast"
+            toastClassName='profile-toast'
           />
         </div>
       </section>

@@ -15,11 +15,21 @@ class MapIndex extends React.Component {
       pin: {},
       pinClick: false
     }
+
+
+    this.scrollLocationOnMarkerClick = this.scrollLocationOnMarkerClick.bind(this)
   }
+
+
 
   handleMarkerClick(event) {
     if(event === this.state.selectedEvent)  this.setState({ selectedEvent: null })
     else this.setState({ selectedEvent: event })
+  }
+
+  scrollLocationOnMarkerClick() {
+    document.getElementById(this.state.selectedEvent.id)
+      .scrollIntoView({ behaviour: 'smooth', block: 'start' })
   }
 
   render() {
@@ -27,7 +37,7 @@ class MapIndex extends React.Component {
     return (
       <div>
         <Map
-          style='mapbox://styles/mapbox/streets-v8'
+          style='mapbox://styles/mapbox/streets-v10'
           center={[8.6753, 9.0820]}
           // center={[7.3986, 9.0765]}
           zoom={[5.53]}
@@ -42,6 +52,7 @@ class MapIndex extends React.Component {
               coordinates={[event.longitude, event.latitude]}
               anchor="bottom"
               onClick={() => this.handleMarkerClick(event)}
+              scrollLocationOnMarkerClick={this.scrollLocationOnMarkerClick}
             >
               <img src={'../assets/pin.png'}/>
             </Marker>

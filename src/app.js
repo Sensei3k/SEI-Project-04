@@ -17,8 +17,11 @@ import EventNew from './components/events/New'
 
 import UserShow from './components/user/Show'
 
+import Footer from './components/common/Footer'
+
 import 'bulma'
 import './style.scss'
+
 
 class App extends React.Component {
 
@@ -39,6 +42,7 @@ class App extends React.Component {
           <Route exact path='/' component={Home}/>
         </Switch>
       </main>
+      <Footer/>
     </Router>)
   }
 }

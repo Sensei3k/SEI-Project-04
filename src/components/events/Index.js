@@ -74,7 +74,10 @@ class EventIndex extends React.Component {
                 }
               </div>
             }
-            {this.state.MapView && <MapIndex events={this.state.events}/>}
+            {this.state.MapView && <MapIndex 
+              events={this.state.events}
+              
+            />}
           </div>
         </section>
       </div>
