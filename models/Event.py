@@ -28,9 +28,3 @@ class EventSchema(Schema):
     user = fields.Nested('UserSchema', exclude=('email', 'events'))
 
 
-    @post_load
-    def load_formats(self, data):
-        data['format'] = Format.get(id=data['format_id'])
-        del data['format_id']
-
-        return data

@@ -6,6 +6,7 @@
   "author": "Detola Oyawoye <oyawoye.ade@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "seed": "pipenv run python seeds.py",
     "run:client": "webpack-dev-server --mode=development",
     "run:server": "pipenv run flask run --port 4000",
     "build": "webpack -p",

@@ -7,6 +7,7 @@ from app import db
 from config.environment import secret
 
 
+# pylint: disable=W0611,C0413
 class User(db.Entity):
     username = Required(str, unique=True)
     email = Required(str, unique=True)
@@ -49,7 +50,7 @@ class UserSchema(Schema):
 
 
     @validates_schema
-    def check_passwords(self, data):
+    def check_passwords(self, data, **kwargs):
         if data['password'] and data['password'] != data['password_confirmation']:
             raise ValidationError(
                 field_name='password_confirmation',
@@ -58,7 +59,7 @@ class UserSchema(Schema):
 
 
     @validates_schema
-    def validate_username(self, data):
+    def validate_username(self, data, **kwargs):
         user = User.get(username=data.get('username'))
 
         if user:
@@ -68,8 +69,9 @@ class UserSchema(Schema):
             )
 
 
+
     @validates_schema
-    def validate_email(self, data):
+    def validate_email(self, data, **kwargs):
         user = User.get(email=data.get('email'))
 
         if user:
@@ -77,9 +79,10 @@ class UserSchema(Schema):
                 field_name='email',
                 message=['Must be unique']
             )
-
+            
+# pylint: disable=W0611,C0413
     @post_load
-    def hash_password(self, data):
+    def hash_password(self, data, **kwargs):
         if data['password']:
             data['password_hash'] = self.generate_hash(data['password'])
 
